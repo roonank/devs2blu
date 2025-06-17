@@ -1,0 +1,13 @@
+ENVIAR PROJETO PELA PRIMEIRA VEZ:
+
+1º git init
+2º git add . OU git add nomeDoArquivo
+3º git commit -m "suaMensagem"
+4º git remote add origin https://github.com
+5º git push origin master OU git push origin main
+
+ATUALIZAR PROJETO:
+
+1º git add . OU git add nomeDoArquivo
+2º git commit -m "suaMensagem"
+3º git push origin master OU git push origin main
