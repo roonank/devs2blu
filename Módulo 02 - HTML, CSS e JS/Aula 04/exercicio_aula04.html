@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios - Aula 04</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        
+        // Função para selecionar item da NavBar
+        const navBarSelect = (param) => {
+            const forms = document.getElementsByTagName('form')
+            for (let index = 0; index < forms.length; index++) {
+                if (!forms[index].classList.contains('hidden')) {
+                    forms[index].classList.add('hidden')
+                }                
+            }
+
+            forms[param].classList.remove('hidden')
+        }
+        
+        // Ex1 - Função para calcular média
+        const calculaMedia = () => {
+            
+            const nota1 = document.getElementById('primeiraNota')
+            const nota2 = document.getElementById('segundaNota')
+            const nota3 = document.getElementById('terceiraNota')            
+            
+            let media = ((parseFloat(nota1.value) + parseFloat(nota2.value) + parseFloat(nota3.value))/3).toFixed(1)
+            let situacao = document.getElementById("situacao")
+
+            document.getElementById('media').innerText = media
+
+            if (media >= 7) document.getElementById("situacao").innerText = "Aprovado!"
+            else if (media >= 5 && media < 7) document.getElementById("situacao").innerText = "Recuperação!"
+            else document.getElementById("situacao").innerText = "Reprovado!"
+
+            nota1.value = ''
+            nota2.value = ''
+            nota3.value = ''
+        }
+    </script>
+</head>
+<body class="bg-gray-900">
+    <!-- Header com NavBar -->
+    <header class="">
+        <nav class="">
+            <div class="">
+            <ul class="font-medium flex flex-row p-4 gap-8 bg-gray-900">
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(0)">Ex 1 - Calcular Média </a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(1)">Ex 2</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(2)">Ex 3</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(3)">Ex 4</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(4)">Ex 5</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(5)">Ex 6</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(6)">Ex 7</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(7)">Ex 8</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+    <main class="text-white w-full h-screen p-30">
+        <!-- Formulário Exercício 1 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl" onsubmit="calculaMedia()">
+            <h1 class="block font-medium text-lg pb-5">Calcular Média</h1>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="number" id="primeiraNota" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer" placeholder=" " required min="0" max="10" step=".01" />
+                
+                <label for="primeira_nota" class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Primeira nota</label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="number" id="segundaNota" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer" placeholder=" " required min="0" max="10" step=".01"/>
+                
+                <label for="segunda_nota" class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Segunda nota</label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="number" id="terceiraNota" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer" placeholder=" " required min="0" max="10" step=".01"/>
+                
+                <label for="terceira_nota" class="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Terceira nota</label>
+            </div>
+            <div class=" mb-5">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center bg-blue-600 focus:ring-blue-800">Calcular</button>
+            </div>
+            
+            <div class="flex flex-col items-center font-black text-4xl">
+                <p class="p-5" id="media"></p>
+                <p class="" id="situacao"></p>
+            </div>
+        </form>
+
+        <!-- Formulário Exercício 2 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 2</form>
+
+        <!-- Formulário Exercício 3 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 3</form>
+
+        <!-- Formulário Exercício 4 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 4</form>
+
+        <!-- Formulário Exercício 5 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 5</form>
+
+        <!-- Formulário Exercício 6 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 6</form>
+
+        <!-- Formulário Exercício 7 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 7</form>
+
+        <!-- Formulário Exercício 8 -->
+        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 8</form>
+    </main>
+    <footer>        
+    </footer>
+</body>
+</html>
