@@ -105,6 +105,22 @@
                 text.innerHTML += `${numeroTabuada} x ${i} = ${numeroTabuada*i} <br>`
             }
         }
+
+        //Ex5 - Função para calcular fatorial
+        const calcularFatorial = () => {
+            let numeroFatorial = parseInt(document.getElementById("number-fatorial").value)
+            let text = document.getElementById("fatorial")
+            
+            function fatorialRecursivo(n){    
+                if (n == 0 || n == 1) {
+                    return 1
+                } else {
+                    return n*fatorialRecursivo(n-1)
+                } 
+            }            
+            
+            text.innerHTML = `Fatorial do número ${numeroFatorial} é: ${fatorialRecursivo(numeroFatorial)}`   
+        }
     </script>
 </head>
 <body class="bg-gray-900">
@@ -126,7 +142,7 @@
                     <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(3)">Ex 4 - Tabuada</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(4)">Ex 5</a>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(4)">Ex 5 - Fatorial</a>
                 </li>
                 <li>
                     <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(5)">Ex 6</a>
@@ -203,10 +219,10 @@
         </form>
 
         <!-- Formulário Exercício 4 -->
-        <form class=" max-w-xl mx-auto h-auto border p-20 rounded-xl" onsubmit="calcularTabuada()">
+        <form class="hidden max-w-xl mx-auto h-auto border p-20 rounded-xl" onsubmit="calcularTabuada()">
             <h1 id="main-text"class="font-medium text-lg pb-5">Tabuada</h1>
             <div class="w-full">                   
-                <input type="number" id="number-tabuada" class="block p-2.5 w-full z-20 text-sm rounded-lg border focus:ring-gray-700 bg-gray-700 border-e-gray-700 border-gray-600 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Informe um número" required min="1" max="100" />
+                <input type="number" id="number-tabuada" class="block p-2.5 w-full z-20 text-sm rounded-lg border focus:ring-gray-700 bg-gray-700 border-e-gray-700 border-gray-600 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Informe um número" required />
             </div>
             <div class="flex">
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-auto px-5 py-2.5 text-center bg-blue-600 focus:ring-blue-800 mt-5">Calcular</button>
@@ -215,7 +231,16 @@
         </form>
 
         <!-- Formulário Exercício 5 -->
-        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 5</form>
+        <form class="hidden max-w-xl mx-auto h-auto border p-20 rounded-xl" onsubmit="calcularFatorial()">
+            <h1 id="main-text"class="font-medium text-lg pb-5">Fatorial</h1>
+            <div class="w-full">                   
+                <input type="number" id="number-fatorial" class="block p-2.5 w-full z-20 text-sm rounded-lg border focus:ring-gray-700 bg-gray-700 border-e-gray-700 border-gray-600 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Informe um número" required min="0"/>
+            </div>
+            <div class="flex">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-auto px-5 py-2.5 text-center bg-blue-600 focus:ring-blue-800 mt-5">Calcular</button>
+            </div>
+            <h1 id="fatorial" class="flex flex-col font-black text-lg mt-10"></h1>
+        </form>
 
         <!-- Formulário Exercício 6 -->
         <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 6</form>
