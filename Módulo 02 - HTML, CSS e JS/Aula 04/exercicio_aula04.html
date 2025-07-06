@@ -10,6 +10,7 @@
         // Função para selecionar item da NavBar
         const navBarSelect = (param) => {
             const forms = document.getElementsByTagName('form')
+            const mainText = document.getElementById("main-text")
             for (let index = 0; index < forms.length; index++) {
                 if (!forms[index].classList.contains('hidden')) {
                     forms[index].classList.add('hidden')
@@ -17,11 +18,11 @@
             }
 
             forms[param].classList.remove('hidden')
+            mainText.classList.add('hidden')
         }
         
         // Ex1 - Função para calcular média
         const calculaMedia = () => {
-            
             const nota1 = document.getElementById('primeiraNota')
             const nota2 = document.getElementById('segundaNota')
             const nota3 = document.getElementById('terceiraNota')            
@@ -39,6 +40,61 @@
             nota2.value = ''
             nota3.value = ''
         }
+
+        // Ex2 - Função para converter moeda
+        const calcularMoeda = (param) => {
+            let valor = parseFloat(document.getElementById("currency-input").value)
+
+            let text = document.getElementById("converted-currency")
+
+            switch (parseInt(param)) {
+                case 1: 
+                    text.innerText = `$ ${(valor/5.41).toFixed(2)}`;
+                break;
+                case 2: 
+                    text.innerText = `€ ${(valor/6.36).toFixed(2)}`;
+                break;
+                case 3:
+                    text.innerText = `£ ${(valor/7.38).toFixed(2)}`;
+                break;
+                case 4:
+                    text.innerText = `₿ ${(valor/594065).toFixed(5)}`;
+                break;
+                default: 
+                    text.innerText = '';
+            }
+        }         
+    
+        // Ex3 - Funções gerar numero e chute
+        const numero = Math.floor(Math.random() *100) +1
+        let tentativa = 0
+        const chutar = () => {
+            let text = document.getElementById("guess")
+            let resultado = document.getElementById("resultado")
+            let chute = parseInt(document.getElementById("number-guess").value)
+
+            tentativa++
+            let dif = numero > chute ? numero - chute : chute - numero
+
+            if(dif == 0) {
+                if(tentativa == 1) {
+                    text.innerHTML = `Parabéns!`
+                    resultado.innerHTML = `Acertou na primeira tentativa!`
+                } else {
+                    text.innerHTML = `Parabéns!` 
+                    resultado.innerHTML = `Foram realizadas ${tentativa} tentativas.`
+                }
+            } else if (dif <= 5){
+                text.innerText = 'Quase!'
+            }else if (dif <= 10){
+                text.innerText = 'Perto!'
+            }else if (dif <= 20){
+                text.innerText = 'Longe!'
+            }else{
+                text.innerText = 'Muito longe!'
+            }
+        }
+
     </script>
 </head>
 <body class="bg-gray-900">
@@ -51,10 +107,10 @@
                     <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(0)">Ex 1 - Calcular Média </a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(1)">Ex 2</a>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(1)">Ex 2 - Conversor de Moeda</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(2)">Ex 3</a>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(2)">Ex 3 - Acerte o número</a>
                 </li>
                 <li>
                     <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(3)">Ex 4</a>
@@ -76,6 +132,7 @@
         </nav>
     </header>
     <main class="text-white w-full h-screen p-30">
+        <h1 id="main-text"class="font-medium text-lg pb-5">Selecione uma opção acima</h1>
         <!-- Formulário Exercício 1 -->
         <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl" onsubmit="calculaMedia()">
             <h1 class="block font-medium text-lg pb-5">Calcular Média</h1>
@@ -105,10 +162,35 @@
         </form>
 
         <!-- Formulário Exercício 2 -->
-        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 2</form>
+        <form class="hidden w-180 mx-auto h-100 border p-20 rounded-xl">
+            <h1 class="block font-medium text-lg pb-5">Conversor de Moeda</h1>
+            <div class="flex items-center flex-row mb-4 justify-between">
+                <div class="w-full">                   
+                    <input type="number" id="currency-input" class="block p-2.5 w-full z-20 text-sm rounded-s-lg border focus:ring-gray-700 bg-gray-700 border-e-gray-700 border-gray-600 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Digite o valor R$" required />
+                </div>
+                <select class="py-2.5 px-4 text-sm font-medium border rounded-e-lg hover:bg-gray-200 focus:ring-4 focus:outline-none bg-gray-700 hover:bg-gray-600 focus:ring-gray-700 border-gray-600" onchange="calcularMoeda(this.value)">
+                    <option value="0">Selecione a moeda</option>
+                    <option value="1">Dolar</option>
+                    <option value="2">Euro</option>
+                    <option value="3">Libra</option>
+                    <option value="4">BitCoin</option>
+                </select>
+            </div>
+            <h1 id="converted-currency" class="flex flex-col items-center font-black text-4xl m-20"></h1>
+        </form>
 
         <!-- Formulário Exercício 3 -->
-        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 3</form>
+        <form class="hidden w-200 mx-auto h-125 border p-20 rounded-xl" onsubmit="chutar()">
+            <h1 id="main-text"class="font-medium text-lg pb-5">Acerte o número</h1>
+            <div class="w-full">                   
+                <input type="number" id="number-guess" class="block p-2.5 w-full z-20 text-sm rounded-lg border focus:ring-gray-700 bg-gray-700 border-e-gray-700 border-gray-600 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Informe um número de 1 a 100" required min="1" max="100" />
+            </div>
+            <div class="flex justify-between">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-auto px-5 py-2.5 text-center bg-blue-600 focus:ring-blue-800 mt-5">Chute</button>
+            </div>
+            <h1 id="guess" class="flex flex-col items-center font-black text-4xl mt-15"></h1>
+            <h1 id="resultado" class="flex flex-col items-center font-black text-4xl mt-2"></h1>
+        </form>
 
         <!-- Formulário Exercício 4 -->
         <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 4</form>
@@ -125,7 +207,5 @@
         <!-- Formulário Exercício 8 -->
         <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 8</form>
     </main>
-    <footer>        
-    </footer>
 </body>
 </html>
