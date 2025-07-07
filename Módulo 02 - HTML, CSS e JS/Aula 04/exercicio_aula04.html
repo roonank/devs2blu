@@ -32,7 +32,7 @@
                     <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(5)">Ex 6 - Calculo de IMC</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(6)">Ex 7</a>
+                    <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(6)">Ex 7 - Ano Bissexto</a>
                 </li>
                 <li>
                     <a href="#" class="block py-2 px-6 text-white hover:text-blue-500 " onclick="navBarSelect(7)">Ex 8</a>
@@ -140,7 +140,16 @@
         </form>
 
         <!-- Formulário Exercício 7 -->
-        <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 7</form>
+        <form class=" max-w-xl mx-auto h-150 border p-20 rounded-xl" onsubmit="calcularAno()">
+            <h1 id="main-text"class="font-medium text-lg pb-5">Ano Bissexto</h1>
+            <div class="w-full">                   
+                <input type="number" id="number-ano" class="block p-2.5 w-full z-20 text-sm rounded-lg border focus:ring-gray-700 bg-gray-700 border-e-gray-700 border-gray-600 placeholder-gray-400 focus:outline-none focus:border-blue-500" placeholder="Informe um ano" required min="1"/>
+            </div>
+            <div class="flex">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-auto px-5 py-2.5 text-center bg-blue-600 focus:ring-blue-800 mt-5">Calcular</button>
+            </div>
+            <h1 id="retorna-ano" class="flex flex-col font-black text-lg mt-10"></h1> 
+        </form>
 
         <!-- Formulário Exercício 8 -->
         <form class="hidden max-w-xl mx-auto h-150 border p-20 rounded-xl">formulario 8</form>

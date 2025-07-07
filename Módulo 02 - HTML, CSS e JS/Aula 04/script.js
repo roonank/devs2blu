@@ -113,7 +113,7 @@
             text.innerHTML = `Fatorial do número ${numeroFatorial} é: ${fatorialRecursivo(numeroFatorial)}`   
         }
     
-        //E6 - Função para calcular IMC
+        //Ex6 - Função para calcular IMC
         const calcularImc = () => {
             let peso = parseFloat(document.getElementById('number-peso').value)
             let altura = parseFloat(document.getElementById('number-altura').value)
@@ -127,4 +127,13 @@
             else if(imc < 34.9) text.innerHTML = `IMC: ${imc.toFixed(2)} <br> Obesidade grau 1`
             else if(imc < 39.9) text.innerHTML = `IMC: ${imc.toFixed(2)} <br> Obesidade grau 2`
             else text.innerHTML = `IMC: ${imc.toFixed(2)} <br> Obesidade grau 3`
+        }
+
+        //Ex7 - Função para calcular ano bissexto
+        const calcularAno = () => {
+            let ano = parseInt(document.getElementById("number-ano").value)
+            let text = document.getElementById("retorna-ano")
+
+            if ((ano%4 == 0 && ano%100 != 0) || ano%400 == 0) text.innerText = `O ano ${ano} é bissexto`
+            else text.innerText = `O ano ${ano} não é bissexto`
         }
