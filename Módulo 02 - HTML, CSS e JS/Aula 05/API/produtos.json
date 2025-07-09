@@ -1,0 +1,22 @@
+{
+  "produtos": [
+    {
+      "id": "f2f1",
+      "nome": "TV",
+      "marca": "Samsung",
+      "valor": 4300
+    },
+    {
+      "id": "0cc8",
+      "nome": "Notebook Inspiron 4563",
+      "marca": "Dell",
+      "valor": 6700
+    },
+    {
+      "id": "303d",
+      "nome": "Monitor Gamer",
+      "marca": "LG",
+      "valor": 2400
+    }
+  ]
+}
