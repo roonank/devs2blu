@@ -17,6 +17,18 @@
       "nome": "Monitor Gamer",
       "marca": "LG",
       "valor": 2400
+    },
+    {
+      "id": "6120",
+      "nome": "Iphone 16 Pro Max",
+      "marca": "Apple",
+      "valor": 15000
+    },
+    {
+      "id": "8146",
+      "nome": "Galaxy S25",
+      "marca": "Samsung",
+      "valor": 5700
     }
   ]
 }
