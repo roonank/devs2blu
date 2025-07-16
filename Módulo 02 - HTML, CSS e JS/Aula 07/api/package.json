@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Projeto CRUD para aprender sobre o Node.js",
+  "keywords": [
+    "crud",
+    "api",
+    "express",
+    "projeto"
+  ],
+  "license": "ISC",
+  "author": "Ronan Kroeger",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
