@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisição - API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+        Consumam a API criada
+    -->
+    <form>
+        <input type="text" class="form-control" placeholder="ID" id="id" readonly="readonly">
+        <input type="text" class="form-control" placeholder="Nome" id="nome" required="required">
+        <input type="text" class="form-control" placeholder="Idade" id="idade" required="required">
+
+        <input type="button" class="btn btn-primary" value="Cadastrar" id="btnCadastrar" onclick="cadastrar()">
+        <input type="button" class="btn btn-primary" value="Alterar" id="btnAlterar" onclick="alterar()">
+        <input type="button" class="btn btn-primary" value="Cancelar" id="btnCancelar" onclick="cancelar()">
+    </form>
+
+    <!-- Tabela -->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabela"></tbody>
+    </table>
+    
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
