@@ -1,0 +1,15 @@
+{
+  "name": "aula-10---avaliacao",
+  "version": "1.0.0",
+  "description": "projeto de loja de roupas",
+  "license": "ISC",
+  "author": "Ronan Kroeger",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "module-exports": "^2.2.1"
+  }
+}
