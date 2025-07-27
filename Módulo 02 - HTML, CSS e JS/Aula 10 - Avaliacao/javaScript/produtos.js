@@ -1,36 +1,34 @@
 
 
 export let produtos = [
-{
-    id : 1,
-    nome : "Camiseta Masculina Manga Curta Cinza",
-    imagem : "https://images.tcdn.com.br/img/img_prod/700820/camiseta_poliviscose_cinza_cimento_unissex_fio_30_1_160_de_gramatura_133_1_20200730155859.jpg",
-    qntEstoque: 50,
-    categoria : "masculino",
-    valor : 69.90
-},
-{
-    id : 2,
-    nome : "Camiseta Masculina Oversized Preta",
-    imagem : "https://layback.vteximg.com.br/arquivos/ids/155824/140.jpg?v=638657392075470000",
-    qntEstoque: 50,
-    categoria : "masculino",
-    valor : 145.90
-},
-{
-    id : 3,
-    nome : "Camiseta Masculina Manga Curta Verde Floresta",
-    imagem : "https://cdn.shoppub.io/cdn-cgi/image/w=1000,h=1000,q=80,f=auto/origgo/media/uploads/produtos/foto/lswrgtqj/6d52d315-fa49-4dd2-8652-203b9dfd2662.png",
-    qntEstoque: 50,
-    categoria : "masculino",
-    valor : 132.90 
-},
-{
-    id : 4,
-    nome : "Camiseta Masculina Manga Curta Caramelo",
-    imagem : "https://vbcamisetas.com.br/cdn/shop/files/vbset0637.jpg?v=1726519890",
-    qntEstoque: 50,
-    categoria : "masculino",
-    valor : 56.95 
-}
-]
+  { id: 1, nome: "Camiseta Masculina Manga Curta Cinza", imagem: "assets/produtos/camiseta-masculina-manga-curta-cinza.png", qntEstoque: 0, categoria: "masculino", valor: 69.90 },
+  { id: 2, nome: "Camiseta Oversized Preta", imagem: "assets/produtos/camiseta-oversized-preta.webp", qntEstoque: 50, categoria: "masculino", valor: 145.90 },
+  { id: 3, nome: "Camiseta Verde Floresta", imagem: "assets/produtos/camiseta-verde-floresta.avif", qntEstoque: 50, categoria: "masculino", valor: 132.90 },
+  { id: 4, nome: "Camiseta Caramelo", imagem: "assets/produtos/camiseta-caramelo.webp", qntEstoque: 50, categoria: "masculino", valor: 56.95 },
+  { id: 5, nome: "Blusa Feminina Preta Gola Alta ", imagem: "assets/produtos/blusa-feminina-preta-gola-alta.webp", qntEstoque: 40, categoria: "feminino", valor: 89.90 },
+  { id: 6, nome: "Calça Jeans Skinny Feminina", imagem: "assets/produtos/calca-jeans-skinny-feminina.jpg", qntEstoque: 30, categoria: "feminino", valor: 119.90 },
+  { id: 7, nome: "Jaqueta Puffer Unissex", imagem: "assets/produtos/jaqueta-puffer-unissex.jpg", qntEstoque: 20, categoria: "coleção de inverno", valor: 229.90 },
+  { id: 8, nome: "Touca de Lã", imagem: "assets/produtos/touca-la-azul.webp", qntEstoque: 60, categoria: "coleção de inverno", valor: 39.90 },
+  { id: 9, nome: "Cachecol Xadrez", imagem: "assets/produtos/cachecol-xadrez.webp", qntEstoque: 45, categoria: "coleção de inverno", valor: 49.90 },
+  { id: 10, nome: "Moletom Oversized", imagem: "assets/produtos/moletom-oversized.webp", qntEstoque: 35, categoria: "novidades", valor: 159.90 },
+  { id: 11, nome: "Vestido Floral Verão", imagem: "assets/produtos/vestido-floral-verão.webp", qntEstoque: 25, categoria: "feminino", valor: 79.90 },
+  { id: 12, nome: "Camiseta Básica Branca", imagem: "assets/produtos/camiseta-basica-branca.webp", qntEstoque: 70, categoria: "promoção", valor: 29.90 },
+  { id: 13, nome: "Camiseta Listrada Azul", imagem: "assets/produtos/camiseta-listrada-azul.jpg", qntEstoque: 40, categoria: "masculino", valor: 64.90 },
+  { id: 14, nome: "Blusa Canelada Feminina", imagem: "assets/produtos/blusa-canelada-feminina.webp", qntEstoque: 50, categoria: "novidades", valor: 59.90 },
+  { id: 15, nome: "Camisa Social Masculina Slim", imagem: "assets/produtos/camisa-social-masculina-slim.webp", qntEstoque: 30, categoria: "masculino", valor: 99.90 },
+  { id: 16, nome: "Top Esportivo Feminino", imagem: "assets/produtos/top-esportivo-feminino.webp", qntEstoque: 35, categoria: "feminino", valor: 49.90 },
+  { id: 17, nome: "Shorts Moletom Masculino", imagem: "assets/produtos/shorts-moletom-masculino.webp", qntEstoque: 45, categoria: "masculino", valor: 54.90 },
+  { id: 18, nome: "Legging Preta Fitness", imagem: "assets/produtos/legging-preta-fitness.webp", qntEstoque: 50, categoria: "feminino", valor: 74.90 },
+  { id: 19, nome: "Camisa Polo Masculina Azul Marinho", imagem: "assets/produtos/camisa-polo-masculina-azul-marinho.webp", qntEstoque: 60, categoria: "promoção", valor: 89.90 },
+  { id: 20, nome: "Blusa Feminina de Tricô Bege", imagem: "assets/produtos/blusa-feminina-de-tricô-bege.png", qntEstoque: 50, categoria: "feminino", valor: 39.90 },
+  { id: 21, nome: "Camisa Xadrez Vermelha", imagem: "assets/produtos/camisa-xadrez-vermelha.webp", qntEstoque: 25, categoria: "coleção de inverno", valor: 84.90 },
+  { id: 22, nome: "Regata Cavada Academia", imagem: "assets/produtos/regata-cavada-academia.webp", qntEstoque: 40, categoria: "masculino", valor: 34.90 },
+  { id: 23, nome: "Saia Plissada", imagem: "assets/produtos/saia-plissada.webp", qntEstoque: 30, categoria: "feminino", valor: 69.90 },
+  { id: 24, nome: "Macacão Jeans Feminino", imagem: "assets/produtos/macacão-jeans-feminino.jpeg", qntEstoque: 25, categoria: "novidades", valor: 149.90 },
+  { id: 25, nome: "Cropped Feminino Manga Curta", imagem: "assets/produtos/cropped-feminino-manga-curta.webp", qntEstoque: 45, categoria: "promoção", valor: 39.90 },
+  { id: 26, nome: "Jaqueta Jeans Masculina", imagem: "assets/produtos/jaqueta-jeans-masculina.webp", qntEstoque: 20, categoria: "coleção de inverno", valor: 199.90 },
+  { id: 27, nome: "Calça Jogger Masculina", imagem: "assets/produtos/calça-jogger-masculina.webp", qntEstoque: 40, categoria: "masculino", valor: 89.90 },
+  { id: 28, nome: "Cropped de Alça Feminino Vermelho", imagem: "assets/produtos/cropped-de-alca-feminino-vermelho.webp", qntEstoque: 35, categoria: "feminino", valor: 99.90 },
+  { id: 29, nome: "Blazer Feminino Slim Fit", imagem: "assets/produtos/blazer-feminino-slim-fit.webp", qntEstoque: 20, categoria: "novidades", valor: 179.90 },
+  { id: 30, nome: "Bermuda Tactel Estampada", imagem: "assets/produtos/bermuda-tactel-estampada.webp", qntEstoque: 60, categoria: "masculino", valor: 44.90 }
+];
