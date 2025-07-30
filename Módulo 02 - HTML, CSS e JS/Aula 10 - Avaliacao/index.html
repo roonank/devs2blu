@@ -6,6 +6,7 @@
     <title>RK Store</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100">
@@ -33,7 +34,7 @@
 
                 <!-- Carrinho de compras -->
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="flex items-center text-sm text-gray-700 hover:text-black transition-colors relative">
+                    <a href="#" class="flex items-center text-sm text-gray-700 hover:text-black transition-colors relative" onclick="abrirCarrinho()">
                         <i class="fas fa-shopping-cart mr-2"></i>
                         <span class="hidden sm:inline">Meu carrinho</span>
                         <span class="absolute -top-2 -right-6 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center" id="nro-carrinho">0</span>
@@ -76,10 +77,28 @@
         </div>
     </nav>
     <!-- MAIN -->
+    <!-- Pop-up do Carrinho -->
+    <div id="carrinho-popup" class="fixed right-0 top-0 h-full w-80 bg-white shadow-lg border-l border-gray-200 transform translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <div class="flex items-center justify-between px-4 py-4 border-b border-gray-200">
+            <h2 class="text-lg font-semibold">Seu Carrinho</h2>
+            <button onclick="fecharCarrinho()" class="text-gray-500 hover:text-black text-xl">&times;</button>
+        </div>
+        <div id="itens-carrinho" class="flex-1 overflow-y-auto px-4 py-2 space-y-4">
+        <!-- Itens do carrinho-->
+        </div>
+        <div class="p-4 border-t border-gray-200">
+            <div class="flex justify-between items-center mb-3">
+                <span class="font-medium">Total:</span>
+                <span id="total-carrinho" class="text-lg font-bold">R$ 0,00</span>
+            </div>
+            <button onclick="finalizarCompra()"class="w-full bg-black text-white py-2 mb-3 rounded-full hover:bg-gray-900 transition cursor-pointer">Finalizar Compra</button>
+            <button onclick="esvaziarCarrinho()" class="w-full bg-red-100 text-red-600 hover:bg-red-200 font-medium py-2 rounded-full text-sm transition-all cursor-pointer">Esvaziar carrinho</button>
+        </div>
+    </div>
     <main>
         <div class="max-w-7xl mx-auto mt-12">
             <div class="grid grid-cols-3 gap-6" id="card-div">
-                
+            <!-- Cards dos produtos  -->
             </div>    
         </div>
     </main>
