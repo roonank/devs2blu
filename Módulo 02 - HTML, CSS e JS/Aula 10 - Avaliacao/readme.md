@@ -16,9 +16,11 @@ Loja virtual fictícia com sistema de carrinho, controle de estoque e persistên
 
 ## 📸 Demonstração
 
-- Página iniciaç
+- Página inicial
 
 ![Página inicial](./assets/imagens/indexpage.png)
+
+- Carrinho de compras
 
 ![Carrinho de compras](./assets/imagens/carrinho.png)
 
