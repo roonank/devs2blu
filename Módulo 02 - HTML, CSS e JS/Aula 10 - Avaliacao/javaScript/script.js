@@ -3,6 +3,7 @@ const nroCarrinho = document.getElementById('nro-carrinho');
 const carrinhoPopup = document.getElementById('carrinho-popup');
 const itensCarrinho = document.getElementById('itens-carrinho');
 const totalCarrinho = document.getElementById('total-carrinho');
+const barraPesquisa = document.getElementById('barra-pesquisa');
 
 let produtos = [];
 let carrinho = [];
@@ -27,12 +28,13 @@ if (carrinhoSalvo) {
 window.onload = () => {
     mostrarProdutos();
     atualizarCarrinho();
+    console.table(produtos)
 }
 
 function mostrarProdutos() {
     cardsDiv.innerHTML = '';
     produtos.forEach((produto, index) => {
-        if (produto.qntEstoque == 0) {
+        if (produto.qntEstoque <= 0) {
             gerarCardIndisponivel(produto);
         } else {
             gerarCardDisponivel(produto, index);
@@ -74,7 +76,7 @@ function gerarCardIndisponivel(produto) {
                 <div class="text-center mb-6">
                     <span class="text-2xl font-bold text-gray-900">R$${produto.valor.toFixed(2)}</span>
                 </div>
-                <button class="w-full bg-gray-400 text-white py-3 px-4 font-medium text-sm tracking-wide rounded-lg cursor-not-allowed" 
+                <button class="w-full h-12 bg-gray-400 text-white font-medium text-sm tracking-wide rounded-lg cursor-not-allowed" 
                 disabled>
                     INDISPONÍVEL
                 </button> 
@@ -128,11 +130,16 @@ function atualizarCarrinho() {
 function adicionarAoCarrinho(index) {
     let produto = produtos[index];
     carrinho.push(produto);
+    if (produtos[index].qntEstoque < 0) {
+        alert("Produto indisponível")
+        return
+    }
     produtos[index].qntEstoque --;
 
     salvarProdutos();
     atualizarCarrinho();
     abrirCarrinho();
+    mostrarProdutos();
 };
 
 function removerDoCarrinho(index) {
@@ -183,6 +190,38 @@ function finalizarCompra() {
     fecharCarrinho();
     alert("Compra finalizada com sucesso!");
 }
+
+function filtrarProdutos(termo) {
+    const termoMin = termo.toLowerCase().trim();
+    cardsDiv.innerHTML = '';
+
+    const encontrados = produtos.filter(produto =>
+        produto.nome.toLowerCase().includes(termoMin) || produto.categoria.toLowerCase().includes(termoMin)
+    );
+
+    if (encontrados.length === 0) {
+        cardsDiv.innerHTML = `<p class="col-span-3 text-center text-gray-500 text-lg">Nenhum produto encontrado para: "${termo}"</p>`
+        return
+    }
+
+    encontrados.forEach(produto => {
+        const indexOriginal = produtos.findIndex(p => p.id === produto.id);
+        if (produto.qntEstoque > 0) {
+            gerarCardDisponivel(produto, indexOriginal);    
+        } else {
+            gerarCardIndisponivel(produto);
+        }
+    });
+}
+
+barraPesquisa.addEventListener('keyup', (event) => {
+    const termo = event.target.value;
+    if (termo === '') {
+        mostrarProdutos();
+    } else {
+        filtrarProdutos(termo);
+    }
+})
 
 window.fecharCarrinho = fecharCarrinho;
 window.abrirCarrinho = abrirCarrinho;
