@@ -9,7 +9,6 @@
 - **Front-end:** React.js, Tailwind CSS
 - **Back-end:** Node.js, Express.js
 - **Banco de dados:** PostgreSQL
-- **Autenticação:** OAuth 2.0 (Google e Microsoft)
 - **Hospedagem:** Vercel (Front), Render (Back)
 - **Testes:** Jest, Postman
 - **CI/CD:** GitHub Actions
@@ -33,11 +32,12 @@ TaskFlow é um sistema web para gestão de tarefas com foco em produtividade e c
 
 ## Sprints
 
-### Sprint 1: Autenticação de usuários
+### Sprint 1: Configuração do ambiente e repositório
 **O que foi feito:**  
-- Front-end: Formulário de login com email/senha, Google e Microsoft.  
-- Back-end: Métodos `autenticarFormulario`, `autenticarGoogle`, `autenticarMicrosoft`.  
-**Desenvolvedores:** João e Maria  
+- Configurado o repositório no GitHub com branches `main` e `dev`.  
+- Criado o ambiente inicial de desenvolvimento para front-end (React) e back-end (Node.js).  
+- Adicionados arquivos de configuração como `.editorconfig`, `.gitignore` e README base.  
+**Desenvolvedores:** João e Lucas  
 **Período de desenvolvimento:** 5 dias  
 **Testes:** 1 dia  
 **Revisão:** 2 dias  
