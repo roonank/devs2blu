@@ -1,0 +1,36 @@
+<form [formGroup]="pessoa">
+    <input type="text"  formControlName="nome" placeholder="Nome">
+    <input type="number" formControlName="idade" placeholder="Idade">
+    <input type="button" value="Enviar" [disabled]="pessoa.invalid">
+</form>
+@if (pessoa.get('nome')?.errors?.['required'] && pessoa.get('nome')?.touched) {
+    <p>O nome deve ser informado!</p>
+}
+@if (pessoa.get('nome')?.errors?.['minlength'] && pessoa.get('nome')?.touched) {
+    <p>O nome deve ter pelo menos três caracteres</p>
+}
+@if (pessoa.get('nome')?.valid && pessoa.get('nome')?.touched) {
+    <p>Nome válido!</p>
+}
+
+
+@if (pessoa.get('idade')?.errors?.['required'] && pessoa.get('idade')?.touched) {
+    <p>A idade deve ser informado!</p>
+}
+@if (pessoa.get('idade')?.errors?.['min'] && pessoa.get('idade')?.touched) {
+    <p>A idade deve ser menor maior que 0</p>
+}
+@if (pessoa.get('idade')?.errors?.['max'] && pessoa.get('idade')?.touched) {
+    <p>A idade deve ser menor que 120</p>
+}
+@if (pessoa.get('idade')?.valid && pessoa.get('idade')?.touched) {
+    <p>Idade válida!</p>
+}
+
+
+
+<!--
+<p>Objeto completo: {{pessoa.value | json}}</p>
+<p>Nome: {{pessoa.value.nome}}</p>
+<p>Idade: {{pessoa.value.idade}}</p>
+    -->
