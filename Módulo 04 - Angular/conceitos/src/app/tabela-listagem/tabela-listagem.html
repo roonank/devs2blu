@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cidade</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (v of vetor; track $index) {
+            <tr>
+                <td>{{v.nome}}</td>
+                <td>{{v.cidade}}</td>
+                <td><Button (click)="remover($index)">Remover</Button></td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+Componentização:
+    1. Componentes específicos para cada situação.
+    2. Reutilização de componentes.
+
+
+    Alerta -> Mensagem, Tipo
+
+    <alerta ('Cadastro efetuado com sucesso!', 'sucesso')></alerta>
+    -Sucesso(Verde)
+    -Alerta/Perigo(Amarelo/Alaranjado)
+    -Falha (Vermelho)
+
+    CRUD PRODUTOS

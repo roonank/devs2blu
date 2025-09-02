@@ -1,0 +1,22 @@
+form{
+    width: 50%;
+    margin: 30px;
+    text-align: center;
+}
+
+input[type="text"]{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 1.5%;
+}
+
+input[type="button"]{
+    background: linear-gradient(to bottom, #9dd53a 0%,#80c217 26%,#a1d54f 50%,#80c217 73%,#7cbc0a 100%);
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding: 1.5% 4%;
+    color: #fff;
+
+}
